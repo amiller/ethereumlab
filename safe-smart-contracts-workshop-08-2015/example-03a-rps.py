@@ -72,15 +72,19 @@ def balance_check():
 s = tester.state()
 c = s.abi_contract(serpent_code)
 
-o = c.add_player(2,value=1000,sender=tester.k0)
+import random
+o = c.add_player(random.randint(0,2),value=1000,sender=tester.k0)
 print("Player 1 Added: {}").format(o)
 
-o = c.add_player(1,value=1000,sender=tester.k1)
+o = c.add_player(random.randint(0,2),value=1000,sender=tester.k1)
 print("Player 2 Added: {}\n").format(o)
 
-print("Player one chooses 2 which is: Scissors")
+o = c.add_player(random.randint(0,2),value=1000,sender=tester.k2)
+print("Player 3 Added: {}\n").format(o)
 
-print("Player two chooses 1 which is: Paper\n")
+#print("Player one chooses 2 which is: Scissors")
+
+#print("Player two chooses 1 which is: Paper\n")
 
 o = c.check(sender=tester.k1)
 print("Check says player {} wins\n").format(o)
@@ -88,76 +92,79 @@ print("Check says player {} wins\n").format(o)
 c.balance_check(sender=tester.k1)
 
 
-
-c = s.abi_contract(serpent_code)
-
-o = c.add_player(1,value=1000,sender=tester.k0)
-print("Player 1 Added: {}").format(o)
-
-o = c.add_player(2,value=1000,sender=tester.k1)
-print("Player 2 Added: {}\n").format(o)
-
-print("Player one chooses 1 which is: paper")
-
-print("Player two chooses 2 which is: scissors\n")
-
-o = c.check(sender=tester.k1)
-print("Check says player {} wins\n").format(o)
-
-c.balance_check(sender=tester.k1)
-
-c = s.abi_contract(serpent_code)
-
-o = c.add_player(1,value=1000,sender=tester.k0)
-print("Player 1 Added: {}").format(o)
-
-o = c.add_player(1,value=1000,sender=tester.k1)
-print("Player 2 Added: {}\n").format(o)
-
-print("Player one chooses 1 which is: paper")
-
-print("Player two chooses 1 which is: paper\n")
-
-o = c.check(sender=tester.k1)
-print("Check says player {} wins\n").format(o)
-
-c.balance_check(sender=tester.k1)
-
-c = s.abi_contract(serpent_code)
-
-o = c.add_player(0,value=1000,sender=tester.k0)
-print("Player 1 Added: {}").format(o)
-
-o = c.add_player(1,value=1000,sender=tester.k1)
-print("Player 2 Added: {}\n").format(o)
-
-print("Player one chooses 0 which is: rock")
-
-print("Player two chooses 1 which is: paper\n")
-
-o = c.check(sender=tester.k1)
-print("Check says player {} wins\n").format(o)
-
-c.balance_check(sender=tester.k1)
+print "Remaining contract balance:", s.block.get_balance(c.address)
 
 
 
-c = s.abi_contract(serpent_code)
+# c = s.abi_contract(serpent_code)
 
-o = c.add_player(0,value=1000,sender=tester.k0)
-print("Player 1 Added: {}").format(o)
+# o = c.add_player(1,value=1000,sender=tester.k0)
+# print("Player 1 Added: {}").format(o)
 
-o = c.add_player(1,value=1000,sender=tester.k1)
-print("Player 2 Added: {}\n").format(o)
+# o = c.add_player(2,value=1000,sender=tester.k1)
+# print("Player 2 Added: {}\n").format(o)
 
-print("Player one chooses 0 which is: rock")
+# print("Player one chooses 1 which is: paper")
 
-print("Player two chooses 2 which is: scissors\n")
+# print("Player two chooses 2 which is: scissors\n")
 
-o = c.check(sender=tester.k1)
-print("Check says player {} wins\n").format(o)
+# o = c.check(sender=tester.k1)
+# print("Check says player {} wins\n").format(o)
 
-c.balance_check(sender=tester.k1)
+# c.balance_check(sender=tester.k1)
+
+# c = s.abi_contract(serpent_code)
+
+# o = c.add_player(1,value=1000,sender=tester.k0)
+# print("Player 1 Added: {}").format(o)
+
+# o = c.add_player(1,value=1000,sender=tester.k1)
+# print("Player 2 Added: {}\n").format(o)
+
+# print("Player one chooses 1 which is: paper")
+
+# print("Player two chooses 1 which is: paper\n")
+
+# o = c.check(sender=tester.k1)
+# print("Check says player {} wins\n").format(o)
+
+# c.balance_check(sender=tester.k1)
+
+# c = s.abi_contract(serpent_code)
+
+# o = c.add_player(0,value=1000,sender=tester.k0)
+# print("Player 1 Added: {}").format(o)
+
+# o = c.add_player(1,value=1000,sender=tester.k1)
+# print("Player 2 Added: {}\n").format(o)
+
+# print("Player one chooses 0 which is: rock")
+
+# print("Player two chooses 1 which is: paper\n")
+
+# o = c.check(sender=tester.k1)
+# print("Check says player {} wins\n").format(o)
+
+# c.balance_check(sender=tester.k1)
+
+
+
+# c = s.abi_contract(serpent_code)
+
+# o = c.add_player(0,value=1000,sender=tester.k0)
+# print("Player 1 Added: {}").format(o)
+
+# o = c.add_player(1,value=1000,sender=tester.k1)
+# print("Player 2 Added: {}\n").format(o)
+
+# print("Player one chooses 0 which is: rock")
+
+# print("Player two chooses 2 which is: scissors\n")
+
+# o = c.check(sender=tester.k1)
+# print("Check says player {} wins\n").format(o)
+
+# c.balance_check(sender=tester.k1)
 
 
 

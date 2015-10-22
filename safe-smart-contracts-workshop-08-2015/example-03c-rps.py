@@ -170,14 +170,19 @@ s1 = ''.join([zfill(alice), ch1, no1])
 comm1 = utils.sha3(s1)
 
 choice2 = random.randint(0,2)
-nonce2 = random.randint(0,2**32-1)
+nonce2 = random.randint(0,2**(32*8)-1)
 ch2 = ''.join(map(chr, tobytearr(choice2, 32)))
 no2 = ''.join(map(chr, tobytearr(nonce2, 32)))
 print("Bob chooses {} which is: {}\n").format(choice2, choice[choice2])
 
+
 ## Use Bob's address for the commitment
 s2 = ''.join([zfill(bob), ch2, no2])
 comm2 = utils.sha3(s2)
+
+print 'Bob\'s nonce:', no2.encode('hex')
+print 'Bob\'s choice:', ch2.encode('hex')
+print 'Bob\'s commitment:', comm2.encode('hex')
 
 o = c.add_player(comm1, value=1000, sender=alice_key)
 print("Alice Added: {}").format(o)
