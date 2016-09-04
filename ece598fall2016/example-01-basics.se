@@ -1,0 +1,9 @@
+event Notice(x:str)
+
+def test_function(x):
+   log(type=Notice, text("Hello World!"))
+
+   self.storage[0] = x
+   self.storage[0xDEAD] = 0xBEEF
+   self.storage["Hello"] = "World!"
+   self.storage[1] = 10 + 1245 + 320   # 1575 = 0x0627
