@@ -41,7 +41,7 @@ def add_player(choice):
 		self.player[self.num_players].address = msg.sender
 		self.player[self.num_players].choice = choice
 		self.num_players = self.num_players + 1
-		return(0)
+		return(choice)
 	else:
 		return(-1)
 
@@ -73,98 +73,23 @@ s = tester.state()
 c = s.abi_contract(serpent_code)
 
 import random
+
+codes = {0: "Rock", 1: "Paper", 2: "Scissors", -1: "#ERR"}
+
 o = c.add_player(random.randint(0,2),value=1000,sender=tester.k0)
-print("Player 1 Added: {}").format(o)
+print("Player 1 Added: {}").format(codes[o])
 
 o = c.add_player(random.randint(0,2),value=1000,sender=tester.k1)
-print("Player 2 Added: {}\n").format(o)
+print("Player 2 Added: {}").format(codes[o])
 
-o = c.add_player(random.randint(0,2),value=1000,sender=tester.k2)
-print("Player 3 Added: {}\n").format(o)
-
-#print("Player one chooses 2 which is: Scissors")
-
-#print("Player two chooses 1 which is: Paper\n")
+# Edge case example: what happens if a 3rd player joins?
+#o = c.add_player(random.randint(0,2),value=1000,sender=tester.k2)
+#print("Player 3 Added: {}").format(codes[o])
 
 o = c.check(sender=tester.k1)
-print("Check says player {} wins\n").format(o)
+print
+if o == 2: print("Check says it was a tie")
+else:      print("Check says player {} wins\n").format(o+1)
 
 c.balance_check(sender=tester.k1)
-
-
 print "Remaining contract balance:", s.block.get_balance(c.address)
-
-
-
-# c = s.abi_contract(serpent_code)
-
-# o = c.add_player(1,value=1000,sender=tester.k0)
-# print("Player 1 Added: {}").format(o)
-
-# o = c.add_player(2,value=1000,sender=tester.k1)
-# print("Player 2 Added: {}\n").format(o)
-
-# print("Player one chooses 1 which is: paper")
-
-# print("Player two chooses 2 which is: scissors\n")
-
-# o = c.check(sender=tester.k1)
-# print("Check says player {} wins\n").format(o)
-
-# c.balance_check(sender=tester.k1)
-
-# c = s.abi_contract(serpent_code)
-
-# o = c.add_player(1,value=1000,sender=tester.k0)
-# print("Player 1 Added: {}").format(o)
-
-# o = c.add_player(1,value=1000,sender=tester.k1)
-# print("Player 2 Added: {}\n").format(o)
-
-# print("Player one chooses 1 which is: paper")
-
-# print("Player two chooses 1 which is: paper\n")
-
-# o = c.check(sender=tester.k1)
-# print("Check says player {} wins\n").format(o)
-
-# c.balance_check(sender=tester.k1)
-
-# c = s.abi_contract(serpent_code)
-
-# o = c.add_player(0,value=1000,sender=tester.k0)
-# print("Player 1 Added: {}").format(o)
-
-# o = c.add_player(1,value=1000,sender=tester.k1)
-# print("Player 2 Added: {}\n").format(o)
-
-# print("Player one chooses 0 which is: rock")
-
-# print("Player two chooses 1 which is: paper\n")
-
-# o = c.check(sender=tester.k1)
-# print("Check says player {} wins\n").format(o)
-
-# c.balance_check(sender=tester.k1)
-
-
-
-# c = s.abi_contract(serpent_code)
-
-# o = c.add_player(0,value=1000,sender=tester.k0)
-# print("Player 1 Added: {}").format(o)
-
-# o = c.add_player(1,value=1000,sender=tester.k1)
-# print("Player 2 Added: {}\n").format(o)
-
-# print("Player one chooses 0 which is: rock")
-
-# print("Player two chooses 2 which is: scissors\n")
-
-# o = c.check(sender=tester.k1)
-# print("Check says player {} wins\n").format(o)
-
-# c.balance_check(sender=tester.k1)
-
-
-

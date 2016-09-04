@@ -1,4 +1,5 @@
 from ethereum import tester
+from ethereum import slogging
 import os
 
 contract_code = """
@@ -18,10 +19,10 @@ def load_money():
       return(0)
 
    if msg.sender == alice:
-      log(type=Notice, text("load_money: Alice OK!"))
+      log(type=Notice, text("load_money: Alice's deposit is OK"))
 
    if msg.sender == bob:
-      log(type=Notice, text("load_money: Bob OK!"))
+      log(type=Notice, text("load_money: Bob's deposit is OK"))
 
    # Mark user as having paid
    self.storage[msg.sender] = 1 

@@ -1,9 +1,9 @@
 from ethereum import tester
 
-# Logging (change to "trace" to see more)
-#from ethereum import slogging
-#slogging.set_level('eth.pb.tx', 'warning')
-#slogging.set_level('eth.vm.op', 'warning')
+# Logging
+from ethereum import slogging
+#slogging.configure(':DEBUG')
+#slogging.configure(':DEBUG,eth.vm:TRACE')
 
 # Serpent code
 contract_code = """
