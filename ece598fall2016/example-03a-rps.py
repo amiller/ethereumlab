@@ -88,8 +88,9 @@ print("Player 2 Added: {}").format(codes[o])
 
 o = c.check(sender=tester.k1)
 print
-if o == 2: print("Check says it was a tie")
-else:      print("Check says player {} wins\n").format(o+1)
+if o == 2: print('Tied!')
+elif o == 0: print("Alice won!")
+elif o == 1: print("Bob won!")
 
 c.balance_check(sender=tester.k1)
 print "Remaining contract balance:", s.block.get_balance(c.address)
