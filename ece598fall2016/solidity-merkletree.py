@@ -26,22 +26,7 @@ file_chunks = [
 zfill = lambda s: (32-len(s))*'\x00' + s
 file_chunks = map(zfill, file_chunks)
 
-def test_solidity_compile_rich():
-    compile_rich_contract = """
-    contract contract_add {
-        function add7(uint a) returns(uint d) { return a + 7; }
-        function add42(uint a) returns(uint d) { return a + 42; }
-    }
-    contract contract_sub {
-        function subtract7(uint a) returns(uint d) { return a - 7; }
-        function subtract42(uint a) returns(uint d) { return a - 42; }
-    }
-    """
-
-    contract_info = get_solidity().compile_rich(compile_rich_contract)
-
 contract_code = """
-
 root = 0x{}
 
 macro hash_node($h, $sibling, $bit):
