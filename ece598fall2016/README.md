@@ -1,5 +1,6 @@
 Course materials for the ECE598AM Fall 2016 programming project
 =========
+Course website: http://soc1024.ece.illinois.edu/teaching/ece598am/fall2016/
 
 Get the docker image with `docker pull socrates1024/ece598am:fall2016`
 
