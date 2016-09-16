@@ -8,7 +8,12 @@ RUN apt-get install -qy software-properties-common curl git python2.7 python-pip
 RUN add-apt-repository -y ppa:ethereum/ethereum
 RUN apt-get update
 RUN apt-get install -qy solc
+RUN rm -rf /var/lib/apt/lists/* # clean up after apt-get to save space
+
+WORKDIR /root
 
 RUN git clone --depth=1 --branch develop https://github.com/ethereum/serpent.git && cd serpent && python setup.py install
 RUN git clone --depth=1 --branch develop https://github.com/ethereum/pyethereum.git && cd pyethereum && python setup.py install
 RUN git clone --branch ece598fall2016 https://github.com/amiller/ethereumlab
+
+WORKDIR /ethereumlab/ece598fall2016
