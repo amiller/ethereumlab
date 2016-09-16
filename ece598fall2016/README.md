@@ -4,6 +4,8 @@ Course website: http://soc1024.ece.illinois.edu/teaching/ece598am/fall2016/
 
 Get the docker image with `docker pull socrates1024/ece598am:fall2016`
 
+Basic resources on Serpent and smart contract programming security: [(EthereumLab)](http://mc2-umd.github.io/ethereumlab/) [(Serpent Programmer’s Guide)](http://mc2-umd.github.io/ethereumlab/docs/serpent_tutorial.pdf) [(Serpent Wiki)](https://github.com/ethereum/wiki/wiki/Serpent)
+
 Resources in this directory:
 --
    - [example-01-basics.py](example-01-basics.py) :
@@ -31,4 +33,8 @@ sudo docker run --name testinstance -it ece598:dockerfile
 sudo docker start testinstance
 sudo docker attach testinstance
 ```
+
+What next?
+---
+Roughly, the instructions for the class project are "build something cool in 3 weeks" 
 
