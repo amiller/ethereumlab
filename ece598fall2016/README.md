@@ -22,7 +22,7 @@ Resources in this directory:
    - [serpent_extern.py](serpent_extern.py):
      Illustrates how to call one contract from another
 
-Building from ./Dockerfile
+Building from the [Dockerfile](Dockerfile)
 --
 ```
 sudo docker build -t "ece598:dockerfile" ./
