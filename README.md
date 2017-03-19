@@ -1,10 +1,16 @@
-Course materials for the March 2017
+Course materials for the March 2017 Programming Project
 =========
-Course website: http://soc1024.ece.illinois.edu/teaching/ece598am/fall2016/
+Basic resources on Solidity and smart contract programming security:
+- [(Ethereum Lab [serpent based])](http://mc2-umd.github.io/ethereumlab/)
+- [(Solidity Reference Documentation)](https://solidity.readthedocs.io/)
+- [(Solidity Tutorial)](https://solidity.readthedocs.io/en/develop/solidity-by-example.html)
+- [(Solidity Wiki)](https://github.com/ethereum/wiki/wiki/Solidity)
 
-Get the docker image with `docker pull socrates1024/ece598am:fall2016`
 
-Basic resources on Serpent and smart contract programming security: [(EthereumLab)](http://mc2-umd.github.io/ethereumlab/) [(Serpent Programmer’s Guide)](http://mc2-umd.github.io/ethereumlab/docs/serpent_tutorial.pdf) [(Serpent Wiki)](https://github.com/ethereum/wiki/wiki/Serpent)
+Virtual Machine
+---
+See the COURSE LIVE DOCUMENT for notes on using your virtual machine. Pyethereum and Solidity are already preinstalled
+- pip install ipython
 
 Resources in this directory:
 --
@@ -25,16 +31,8 @@ Resources in this directory:
    - [serpent_extern.py](serpent_extern.py):
      Illustrates how to call one contract from another
 
-Building from the [Dockerfile](Dockerfile)
---
-```
-sudo docker build -t "ece598:dockerfile" ./
-sudo docker run --name testinstance -it ece598:dockerfile
-sudo docker start testinstance
-sudo docker attach testinstance
-```
+
 
 What next?
 ---
-Roughly, the instructions for the class project are "build something cool in 3 weeks" 
-
+Roughly, the instructions for the lab assignment are "build something cool in the next 3 hours."
