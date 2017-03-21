@@ -101,8 +101,9 @@ pay5 = sigamt(int(5*10E21))
 pay10 = sigamt(int(10*10E21))
 
 # Bob calls finalize
-V,R,S = pay10
-fval = int(10*10E21)
+#V,R,S = pay10
+#fval = int(10*10E21)
+(V,R,S), fval = (lambda x: (sigamt(x), x))(int(29*10E21))
 contract.finalize((V,R,S), fval, sender=tester.k1)
 
 s.mine(10)
